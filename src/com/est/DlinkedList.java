@@ -87,8 +87,7 @@ public void buscarindiceyEliminar(DlinkedList lista,int dato){
 		Nodo p=eliminar.getAnterior();
 		Nodo q=eliminar.getSiguiente();
 		if (p==null){
-			
-		q.setAnterior(null);
+	    q.setAnterior(null);
 		cabeza=q;
 		}
 		else{
@@ -106,13 +105,31 @@ public void buscarindiceyEliminar(DlinkedList lista,int dato){
 	
 	
 }
+public String listarFin(){
+	if (estaVacia()==true){return "Lista vacia!!!";}
+	else{
+String salida="";
+Nodo p =cola;
+{salida+=" Lista de nodos:\n";
+salida+=p.getDato()+"\n";
+p=p.getAnterior();
+while(p!=null){
+	salida+=p.getDato()+"\n";
+	p=p.getAnterior();}
 	
-public String listar(){
+	
+}
+
+	return salida;}
+}
+
+	
+public String listarIni(){
 	if (estaVacia()==true){return "Lista vacia!!!";}
 	else{
 String salida="";
 Nodo p =cabeza;
-{salida+=" Lista de nodos:\n";
+{salida+="Lista de nodos:\n";
 salida+=p.getDato()+"\n";
 p=p.getSiguiente();
 while(p!=null){
